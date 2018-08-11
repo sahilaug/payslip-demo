@@ -1,0 +1,51 @@
+{
+  "name": "payslip-demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "history": "^4.7.2",
+    "icepick": "^2.3.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "redux": "3.7.2",
+    "redux-actions": "^2.3.2",
+    "redux-form": "7.2.0",
+    "redux-saga": "^0.16.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.3",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-babel": "5.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "0.14.3",
+    "lint-staged": "7.0.5",
+    "prettier": "1.12.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged",
+    "prettify": "find src -name '*.js' | xargs prettier --write",
+    "lint": "./node_modules/.bin/eslint --fix src/**/*.js"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --write",
+      "./node_modules/.bin/eslint --fix",
+      "git add"
+    ],
+    "src/**/*.css": [
+      "prettier --write",
+      "./node_modules/.bin/eslint --fix",
+      "git add"
+    ]
+  }
+}
